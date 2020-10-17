@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# kndwin.dev
+
+Welcome to my site! This is my 3rd iteration (this time using Nextjs!)
