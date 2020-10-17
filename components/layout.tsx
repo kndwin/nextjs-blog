@@ -30,6 +30,8 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+
+
       <header className={styles.header}>
         {home ? (
           <>
@@ -39,6 +41,16 @@ export default function Layout({
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <Link href="/blog">
+              <a>
+                Blog
+              </a>
+            </Link>
+            <Link href="/projects">
+              <a>
+                Projects
+              </a>
+            </Link>
           </>
         ) : (
           <>
