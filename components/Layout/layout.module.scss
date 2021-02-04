@@ -2,12 +2,14 @@
   max-width: 36rem;
   padding: 0 1rem;
   margin: 3rem auto 6rem;
+  background: var(--theme-page-background); 
 }
 
 .header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .headerImage {
@@ -23,3 +25,10 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.navLinks {
+  a {
+    margin-left: 1rem; 
+  }
+}
+

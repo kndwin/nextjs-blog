@@ -1,3 +1,15 @@
+@import './colors'; 
+
+:root {
+  --background: white;
+  --foreground: #{$dark}; 
+}
+
+[data-theme='dark'] {
+  --background: #{$dark};
+  --foreground: #{$light}; 
+}
+
 html,
 body {
   padding: 0;
@@ -6,6 +18,8 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  color: var(--foreground);
+  background: var(--background); 
 }
 
 * {
@@ -13,7 +27,7 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: $blue;
   text-decoration: none;
 }
 

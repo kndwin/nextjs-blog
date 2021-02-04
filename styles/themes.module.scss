@@ -1,0 +1,13 @@
+@import './colors.scss'; 
+
+.light {
+  --theme-color: $light; 
+  --theme-page-background: $light; 
+  --theme-page-text: $dark;  
+}
+
+.dark {
+  --theme-color: $light; 
+  --theme-page-background: $light; 
+  --theme-page-text: $dark;  
+}
