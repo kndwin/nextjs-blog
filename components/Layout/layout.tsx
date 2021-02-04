@@ -40,12 +40,14 @@ export default function Layout({
         {home ? (
           <>
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
-            <button onClick={() => setTheme('dark')}>
-              Dark
-            </button>
-            <button onClick={() => setTheme('light')}>
-              Light
-            </button>
+            <label className={styles.switch}
+            >
+              <input type="checkbox"
+              onClick={() => theme == 'light' ? setTheme('dark') : setTheme('light')}
+              />
+              <div className={`${styles.slider} ${styles.round}`}>
+              </div>
+            </label>
             <div className={styles.navLinks}>
               <Link href="/blog">
                 <a>
