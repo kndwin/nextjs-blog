@@ -1,22 +1,28 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from './layout.module.scss'
 import utilStyles from 'styles/utils.module.css'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
+import { faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const name = 'Kevin Nguyen'
+const name = 'kndwin'
 export const siteTitle = 'kndwin.dev'
 
 export default function Layout({ 
-  children, 
-  home 
+  children,
+  page
 } : {
   children: React.ReactNode,
-  home?: boolean
+  page?: string
 }) {
-
+  const [mounted, setMounted] = useState<boolean>(false)
   const {theme, setTheme} = useTheme()
-  
+  useEffect(() => setMounted(true), [])
+  if (!mounted) {
+    return null
+  }
 
   return (
     <div className={`${styles.container}`}>
@@ -37,52 +43,45 @@ export default function Layout({
       </Head>
 
       <header className={styles.header}>
-        {home ? (
-          <>
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-            <label className={styles.switch}
-            >
-              <input type="checkbox"
-              onClick={() => theme == 'light' ? setTheme('dark') : setTheme('light')}
-              />
-              <div className={`${styles.slider} ${styles.round}`}>
-              </div>
-            </label>
-            <div className={styles.navLinks}>
-              <Link href="/blog">
-                <a>
-                  Blog
-                </a>
-              </Link>
-              <Link href="/projects">
-                <a>
-                  Projects
-                </a>
-              </Link>
-            </div>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
+        <div className={styles.navLinks}>
+          <Link href="/" >
+            <a className={page == "home" ? styles.underline : ""}>kndwin</a>
+          </Link>
+          <Link href="/blog">
+            <a className={page == "blog" ? styles.underline : ""} >blog</a>
+          </Link>
+          <Link href="/projects">
+            <a className={page == "projects" ? styles.underline : ""}>projects</a>
           </Link>
         </div>
-      )}
+        <div className={styles.rightNav}>
+          <a href="https://twitter.com/kndwindev" target="_blank">
+            <FontAwesomeIcon icon={faTwitter} 
+              className={styles.icon} 
+              id={styles.twitter}
+              size='lg'/>
+          </a>
+          <a href="https://twitter.com/kndwindev" target="_blank">
+            <FontAwesomeIcon icon={faYoutube} 
+              className={styles.icon} 
+              id={styles.youtube}
+              size='lg' />
+          </a>
+          <label className={styles.switch}>
+            <input type="checkbox"
+            onClick={() => theme == 'light' ? setTheme('dark') : setTheme('light')}
+            />
+            <div className={`${styles.slider} ${styles.round}`}>
+            </div>
+          </label>
+        </div>
+      </header>
+      <main className={styles.main}>
+        {children}
+      </main>
+      <footer className={styles.footer}>
+        made with ❤
+      </footer>
     </div>
   )
 }

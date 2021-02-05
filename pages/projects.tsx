@@ -40,7 +40,7 @@ export default function Projects({
     )
   }
   return (
-    <Layout>
+    <Layout page="projects">
       <Head>
         <title>{siteTitle}</title>
       </Head>

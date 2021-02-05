@@ -3,11 +3,17 @@
 :root {
   --background: white;
   --foreground: #{$dark}; 
+  --aqua: #{$aqua}; 
+  --blue: #{$blue}; 
+  --red: #{$red}; 
 }
 
 [data-theme='dark'] {
   --background: #{$dark};
   --foreground: #{$light}; 
+  --aqua: #{$aqua-light}; 
+  --blue: #{$blue-light}; 
+  --red: #{$red-light}; 
 }
 
 html,
@@ -28,7 +34,6 @@ body {
 }
 
 a {
-  color: $blue;
   text-decoration: none;
 }
 
