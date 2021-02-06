@@ -6,6 +6,7 @@
   --aqua: #{$aqua}; 
   --blue: #{$blue}; 
   --red: #{$red}; 
+  --grey: #{$grey};
 }
 
 [data-theme='dark'] {
@@ -14,6 +15,7 @@
   --aqua: #{$aqua-light}; 
   --blue: #{$blue-light}; 
   --red: #{$red-light}; 
+  --grey: #{$grey};
 }
 
 html,

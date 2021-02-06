@@ -4,8 +4,9 @@ import styles from './layout.module.scss'
 import utilStyles from 'styles/utils.module.css'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import { faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faYoutube, faGithub} from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const name = 'kndwin'
 export const siteTitle = 'kndwin.dev'
@@ -47,9 +48,6 @@ export default function Layout({
           <Link href="/" >
             <a className={page == "home" ? styles.underline : ""}>kndwin</a>
           </Link>
-          <Link href="/blog">
-            <a className={page == "blog" ? styles.underline : ""} >blog</a>
-          </Link>
           <Link href="/projects">
             <a className={page == "projects" ? styles.underline : ""}>projects</a>
           </Link>
@@ -65,6 +63,18 @@ export default function Layout({
             <FontAwesomeIcon icon={faYoutube} 
               className={styles.icon} 
               id={styles.youtube}
+              size='lg' />
+          </a>
+          <a href="https://github.com/kndwin" target="_blank">
+            <FontAwesomeIcon icon={faGithub} 
+              className={styles.icon} 
+              id={styles.github}
+              size='lg' />
+          </a>
+          <a href="mailto:me@kndwin.dev" target="_blank">
+            <FontAwesomeIcon icon={faEnvelope} 
+              className={styles.icon} 
+              id={styles.github}
               size='lg' />
           </a>
           <label className={styles.switch}>
