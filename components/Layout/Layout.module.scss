@@ -66,7 +66,8 @@
   a:hover {
     text-decoration: none; 
     font-weight: bolder; 
-    color: var(--aqua); 
+    color: var(--background); 
+		-webkit-text-stroke: 1px var(--aqua); 
   }
 }
 
@@ -92,7 +93,7 @@
   right: 0;
   bottom: 0;
   background-color: var(--foreground);
-  color: $dark; 
+  color: var(--background); 
   -webkit-transition: .4s;
   transition: .4s;
 }

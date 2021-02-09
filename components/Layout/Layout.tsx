@@ -18,7 +18,10 @@ export default function Layout({
 }) {
   const [mounted, setMounted] = useState<boolean>(false)
   const {theme, setTheme} = useTheme()
-  useEffect(() => setMounted(true), [])
+	useEffect(() => {
+		setMounted(true)
+	},[])
+
   if (!mounted) {
     return null
   }
@@ -53,7 +56,7 @@ export default function Layout({
         <div className={styles.rightNav}>
           <label className={styles.switch}>
             <input type="checkbox"
-            onClick={() => theme == 'light' ? setTheme('dark') : setTheme('light')}
+							onClick={() => theme == 'light' ? setTheme('dark') : setTheme('light')}
             />
             <div className={`${styles.slider} ${styles.round}`}>
             </div>

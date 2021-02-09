@@ -2,24 +2,46 @@
 
 :root {
   --background: white;
-  --foreground: #{$dark}; 
-  --aqua: #{$aqua}; 
-  --blue: #{$blue}; 
-  --red: #{$red}; 
+	--background1: #{$light1}; 
+	--background2: #{$light2}; 
+	--background3: #{$light3}; 
+  --foreground: #{$dark0}; 
+  --foreground1: #{$dark1}; 
+  --foreground2: #{$dark2}; 
+  --foreground3: #{$dark3}; 
+  --aqua: #{$aqua-dark};
+  --aqua2: #{$aqua-light};
+  --blue: #{$blue-dark};
+  --red: #{$red-dark};
+  --red2: #{$red-light}; 
+  --green: #{$green-dark};
+	--yellow: #{$yellow-dark};
+	--yellow2: #{$yellow-light}; 
+	--orange: #{$orange-dark};
+	--purple: #{$purple-dark};
   --grey: #{$grey};
-  --green: #{$green};
-	--yellow: #{$yellow}; 
 }
 
 [data-theme='dark'] {
-  --background: #{$dark};
-  --foreground: #{$light}; 
+  --background: #{$dark0};
+	--background1: #{$dark1}; 
+	--background2: #{$dark2}; 
+	--background3: #{$dark3}; 
+  --foreground: #{$light0}; 
+  --foreground1: #{$light1}; 
+  --foreground2: #{$light2}; 
+  --foreground3: #{$light3}; 
   --aqua: #{$aqua-light}; 
+  --aqua2: #{$aqua-dark};
   --blue: #{$blue-light}; 
   --red: #{$red-light}; 
+  --red2: #{$red-dark}; 
   --grey: #{$grey};
   --green: #{$green-light};
 	--yellow: #{$yellow-light}; 
+	--yellow2: #{$yellow-dark}; 
+	--orange: #{$orange-light}; 
+	--purple: #{$purple-light}; 
 }
 
 html,

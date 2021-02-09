@@ -1,4 +1,5 @@
 import 'styles/global.scss'
+import 'styles/gruvbox.scss'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 

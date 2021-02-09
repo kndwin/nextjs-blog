@@ -12,6 +12,7 @@ export default function Projects({
     type: string
     name: string
     tags: string[]
+		screenshot: string | undefined
     linkToDemo: string
     linkToSourceCode: string
     shortDescription: string
@@ -23,19 +24,39 @@ export default function Projects({
         <h1>{_type}</h1>
         {allProjectsData
           .filter(({type}) => _type === type)
-          .map(({name, tags, linkToDemo, linkToSourceCode, shortDescription}) => (
-						<Browser url={linkToDemo}>
-              {`${name}: ${shortDescription}`}
-              <br/>
-              {tags.map(tag => (
-                <div>
-                  {tag}
-                </div>
-              ))}
-              <br/>
-              <a href={linkToDemo}>demo </a>
-              <a href={linkToSourceCode}>source</a>
-						</Browser>
+          .map(({name, tags, screenshot, linkToDemo, linkToSourceCode, shortDescription}) => (
+						<div className={styles.card}>
+							<div className={styles.title}>
+								{`${name}`}
+							</div>
+							<div className={styles.description}>
+								{`${shortDescription}`}
+						</div>
+
+							<Browser url={linkToDemo}>
+								<img src={screenshot} 
+									className={styles.screenshot}
+									alt="" />
+							</Browser>
+
+							<div className={styles.bottom}>
+								<div className={styles.tags}>
+								{tags.map(tag => (
+									<div className={styles.tag}>
+										{tag}
+									</div>
+								))}
+								</div>
+								<div className={styles.buttons}>
+									<div className={styles.button}>
+										<a href={linkToDemo}>demo</a>
+									</div>
+									<div className={styles.button}>
+										<a href={linkToSourceCode}>source</a>
+									</div>
+								</div>
+							</div>
+						</div>
           )
         )}
       </div>
@@ -62,7 +83,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const allProjectsData = [
     {
       type: "freecodecamp",
-      name: "💪 exercise tracker",
+      name: "exercise tracker",
       tags: ["node","express","heroku","mongodb"],
       linkToDemo: "https://kndwin-fcc-exercise-tracker.herokuapp.com",
       linkToSourceCode: "https://github.com/kndwin/fcc-project-exercisetracker",
@@ -70,15 +91,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     {
       type: "freecodecamp",
-      name: "💬 random quote generator",
-      tags: ["react","bootstrap","codepen"],
-      linkToDemo: "https://codepen.io/kndwin/full/GRgEEaB" ,
-      linkToSourceCode: "https://codepen.io/kndwin/pen/GRgEEaB",
-      shortDescription: "generates a random Simpsons quote"
-    },
-    {
-      type: "freecodecamp",
-      name: "📊 bar chart",
+      name: "bar chart",
       tags: ["react","d3","codepen"],
       linkToDemo: "https://codepen.io/kndwin/full/WNQjLwP",
       linkToSourceCode: "https://codepen.io/kndwin/pen/WNQjLwP",
@@ -86,30 +99,32 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     {
       type: "client work",
-      name: "🛋️ holroyd community aid",
+      name: "de-coco",
+      tags: ["react","google-map","netlify"],
+			screenshot: "https://screenshotapi-dot-net.storage.googleapis.com/de_coco_com_au_11hdxz36yxwy.png", 
+      linkToDemo: "https://de-coco.com.au",
+      linkToSourceCode: "https://github.com/kndwin/site-decoco-react-netlify",
+      shortDescription: "simple SPA site that for a local furniture business"
+    },
+    {
+      type: "client work",
+      name: "holroyd community aid",
       tags: ["gatsby","graphql","markdown","netlify"],
       linkToDemo: "https://dev-hca.netlify.com",
       linkToSourceCode: "https://github.com/kndwin/sites-hca",
       shortDescription: "simple site for a community store",
     },
     {
-      type: "client work",
-      name: "🛋️ de-coco",
-      tags: ["react","google-map","netlify"],
-      linkToDemo: "https://de-coco.com.au",
-      linkToSourceCode: "https://github.com/kndwin/site-decoco-react-netlify",
-      shortDescription: "simple SPA site that for a local furniture business"
-    },
-    {
       type: "personal work",
-      name: "💻 portfolio",
-      tags: ["gatsby","graphql","markdown","netlify"],
+      name: "portfolio",
+      tags: ["nextjs","sass","markdown","vercel"],
+			screenshot: "https://screenshotapi-dot-net.storage.googleapis.com/kndwin_dev_5w4rz9gxp0kt.png", 
       linkToDemo: "https://kndwin.dev",
       linkToSourceCode: "https://github.com/kndwin/sites-portfolio",
       shortDescription: "simple site with a blog",
     },
   ]
-
+	
   return {
     props: {
       allProjectsData
