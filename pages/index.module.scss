@@ -3,23 +3,21 @@
   width: 100%;
   border: 5px solid var(--foreground); 
   box-shadow: 10px 10px 0 var(--foreground); 
-  display: flex;
-  align-items: center;
-  justify-content: center; 
   padding: 2rem; 
 }
 
-.image {
-  border-radius: 50%; 
-  margin-right: 1rem; 
-  border: 5px solid var(--foreground); 
-  height: 200px;
-  width: 200px; 
+.profile {
+	display: flex;
 }
 
 .tags {
-  display: flex;
-  flex-direction: column; 
+  display: block;
+	margin: 10px 0; 
+}
+
+.tagDisplay {
+	display: inline-block; 
+	align-items: baseline; 
 }
 
 .tag {
@@ -27,7 +25,7 @@
   color: var(--background);
   background: var(--foreground); 
   padding: 0 5px; 
-  margin: 0 10px 0 0; 
+  margin: 2px; 
   border-radius: 5px; 
   width: fit-content; 
   height: fit-content; 
@@ -45,7 +43,7 @@
 }
 
 .description {
-  margin: 0.5em 0 0; 
+  margin: 0 1rem; 
 }
 
 .blog {
@@ -73,3 +71,12 @@
 	}
 }
 
+@media only screen and (max-width: 650px) {
+	.profile {
+		flex-direction: column; 
+	}
+
+	.description {
+		margin: 0; 
+	}
+}
