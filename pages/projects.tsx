@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/Layout/layout'
-import utilStyles from '../styles/utils.module.css'
+import Layout, { siteTitle } from 'components/Layout/Layout'
+import utilStyles from 'styles/utils.module.css'
+import styles from './projects.module.scss'
+import Browser from 'components/Browser/Browser'
 import { GetStaticProps } from 'next'
 
 export default function Projects({
@@ -22,7 +24,7 @@ export default function Projects({
         {allProjectsData
           .filter(({type}) => _type === type)
           .map(({name, tags, linkToDemo, linkToSourceCode, shortDescription}) => (
-            <li>
+						<Browser url={linkToDemo}>
               {`${name}: ${shortDescription}`}
               <br/>
               {tags.map(tag => (
@@ -33,7 +35,7 @@ export default function Projects({
               <br/>
               <a href={linkToDemo}>demo </a>
               <a href={linkToSourceCode}>source</a>
-            </li>
+						</Browser>
           )
         )}
       </div>
@@ -45,13 +47,12 @@ export default function Projects({
         <title>{siteTitle}</title>
       </Head>
       <div className={utilStyles.padding1px}>
-        <h2 className={utilStyles.headingLg}>
+        <title className={utilStyles.headingLg}>
           Projects
-        </h2>
-        {projectByType('backend')}
-        {projectByType('frontend')}
-        {projectByType('data visualisation')}
-        {projectByType('other')}
+        </title>
+        {projectByType('client work')}
+        {projectByType('personal work')}
+        {projectByType('freecodecamp')}
       </div>
     </Layout>
   )
@@ -60,7 +61,7 @@ export default function Projects({
 export const getStaticProps: GetStaticProps = async () => {
   const allProjectsData = [
     {
-      type: "backend",
+      type: "freecodecamp",
       name: "💪 exercise tracker",
       tags: ["node","express","heroku","mongodb"],
       linkToDemo: "https://kndwin-fcc-exercise-tracker.herokuapp.com",
@@ -68,39 +69,7 @@ export const getStaticProps: GetStaticProps = async () => {
       shortDescription: "several REST API endpoints that tracks a user's exercise"
     },
     {
-      type: "backend",
-      name: "📏 url shortener",
-      tags: ["node","express","heroku","mongodb"],
-      linkToDemo: "https://kndwin-fcc-urlshortener.herokuapp.com",
-      linkToSourceCode: "https://github.com/kndwin/fcc-project-urlshortener",
-      shortDescription: "returns an endpoint that redirects to given URL"
-    },
-    {
-      type: "backend",
-      name: "📂 file metadata",
-      tags: ["node","express","heroku","multer"],
-      linkToDemo: "https://kndwin-fcc-filemetadata.herokuapp.com",
-      linkToSourceCode: "https://github.com/kndwin/fcc-project-filemetadata",
-      shortDescription: "returns metadata about an uploaded file"
-    },
-    {
-      type: "backend",
-      name: "⏱️ timestamp",
-      tags: ["node","express","heroku"],
-      linkToDemo: "https://kndwin-fcc-timestamp.herokuapp.com",
-      linkToSourceCode: "https://github.com/kndwin/fcc-project-timestamp",
-      shortDescription: "returns the date in ISO-8601 format"
-    },
-    {
-      type: "backend",
-      name: "🗣️ header parser",
-      tags: ["node","express","heroku"],
-      linkToDemo: "https://kndwin-fcc-headerparser.herokuapp.com",
-      linkToSourceCode: "https://github.com/kndwin/fcc-project-headerparser",
-      shortDescription: "returns header information of a GET request"
-    },
-    {
-      type: "frontend",
+      type: "freecodecamp",
       name: "💬 random quote generator",
       tags: ["react","bootstrap","codepen"],
       linkToDemo: "https://codepen.io/kndwin/full/GRgEEaB" ,
@@ -108,39 +77,7 @@ export const getStaticProps: GetStaticProps = async () => {
       shortDescription: "generates a random Simpsons quote"
     },
     {
-      type: "frontend",
-      name: "📃 markdown previewer",
-      tags: ["react","markdown","codepen"],
-      linkToDemo: "https://cdpn.io/kndwin/full/bGNRKBB" ,
-      linkToSourceCode: "https://codepen.io/kndwin/pen/bGNRKBB",
-      shortDescription: "converts raw text to html and previews it side by side"
-    },
-    {
-      type: "frontend",
-      name: "🥁 drumpad",
-      tags: ["react","sass","codepen"],
-      linkToDemo: "https://cdpn.io/kndwin/full/rNawrKa" ,
-      linkToSourceCode: "https://codepen.io/kndwin/pen/rNawrKa",
-      shortDescription: "buttons generate sounds like a pad"
-    },
-    {
-      type: "frontend",
-      name: "⏲️ pomodoro timer",
-      tags: ["react","sass","redux","codepen"],
-      linkToDemo: "https://codepen.io/kndwin/full/abOdKEz",
-      linkToSourceCode: "https://codepen.io/kndwin/pen/abOdKEz",
-      shortDescription: "(unstylised) simple timer built to experiment react with redux"
-    },
-    {
-      type: "frontend",
-      name: "🔢 calculator",
-      tags: ["react","sass","codepen"],
-      linkToDemo: "https://cdpn.io/kndwin/full/ZEGKoXV" ,
-      linkToSourceCode: "https://codepen.io/kndwin/pen/ZEGKoXV",
-      shortDescription: "(unstylised) simple calculator app built to experiment with react components"
-    },
-    {
-      type: "data visualisation",
+      type: "freecodecamp",
       name: "📊 bar chart",
       tags: ["react","d3","codepen"],
       linkToDemo: "https://codepen.io/kndwin/full/WNQjLwP",
@@ -148,23 +85,7 @@ export const getStaticProps: GetStaticProps = async () => {
       shortDescription: "simple bar chart with data source from endpoint"
     },
     {
-      type: "data visualisation",
-      name: "⚫ scatter chart",
-      tags: ["react","d3","codepen"],
-      linkToDemo: "https://codepen.io/kndwin/full/MWwqpLB",
-      linkToSourceCode: "https://codepen.io/kndwin/pen/MWwqpLB",
-      shortDescription: "simple scatter with data source from endpoint"
-    },
-    {
-      type: "other",
-      name: "💻 portfolio",
-      tags: ["gatsby","graphql","markdown","netlify"],
-      linkToDemo: "https://kndwin.dev",
-      linkToSourceCode: "https://github.com/kndwin/sites-portfolio",
-      shortDescription: "simple site with a blog",
-    },
-    {
-      type: "other",
+      type: "client work",
       name: "🛋️ holroyd community aid",
       tags: ["gatsby","graphql","markdown","netlify"],
       linkToDemo: "https://dev-hca.netlify.com",
@@ -172,12 +93,20 @@ export const getStaticProps: GetStaticProps = async () => {
       shortDescription: "simple site for a community store",
     },
     {
-      type: "other",
+      type: "client work",
       name: "🛋️ de-coco",
       tags: ["react","google-map","netlify"],
       linkToDemo: "https://de-coco.com.au",
       linkToSourceCode: "https://github.com/kndwin/site-decoco-react-netlify",
       shortDescription: "simple SPA site that for a local furniture business"
+    },
+    {
+      type: "personal work",
+      name: "💻 portfolio",
+      tags: ["gatsby","graphql","markdown","netlify"],
+      linkToDemo: "https://kndwin.dev",
+      linkToSourceCode: "https://github.com/kndwin/sites-portfolio",
+      shortDescription: "simple site with a blog",
     },
   ]
 

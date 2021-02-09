@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import styles from './layout.module.scss'
-import utilStyles from 'styles/utils.module.css'
+import styles from './Layout.module.scss'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { faTwitter, faYoutube, faGithub} from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-const name = 'kndwin'
 export const siteTitle = 'kndwin.dev'
 
 export default function Layout({ 
@@ -53,30 +51,6 @@ export default function Layout({
           </Link>
         </div>
         <div className={styles.rightNav}>
-          <a href="https://twitter.com/kndwindev" target="_blank">
-            <FontAwesomeIcon icon={faTwitter} 
-              className={styles.icon} 
-              id={styles.twitter}
-              size='lg'/>
-          </a>
-          <a href="https://twitter.com/kndwindev" target="_blank">
-            <FontAwesomeIcon icon={faYoutube} 
-              className={styles.icon} 
-              id={styles.youtube}
-              size='lg' />
-          </a>
-          <a href="https://github.com/kndwin" target="_blank">
-            <FontAwesomeIcon icon={faGithub} 
-              className={styles.icon} 
-              id={styles.github}
-              size='lg' />
-          </a>
-          <a href="mailto:me@kndwin.dev" target="_blank">
-            <FontAwesomeIcon icon={faEnvelope} 
-              className={styles.icon} 
-              id={styles.github}
-              size='lg' />
-          </a>
           <label className={styles.switch}>
             <input type="checkbox"
             onClick={() => theme == 'light' ? setTheme('dark') : setTheme('light')}
@@ -90,7 +64,30 @@ export default function Layout({
         {children}
       </main>
       <footer className={styles.footer}>
-        made with ❤
+				<a href="https://twitter.com/kndwindev" target="_blank">
+					<FontAwesomeIcon icon={faTwitter} 
+						className={styles.icon} 
+						id={styles.twitter}
+						size='lg'/>
+				</a>
+				<a href="https://twitter.com/kndwindev" target="_blank">
+					<FontAwesomeIcon icon={faYoutube} 
+						className={styles.icon} 
+						id={styles.youtube}
+						size='lg' />
+				</a>
+				<a href="https://github.com/kndwin" target="_blank">
+					<FontAwesomeIcon icon={faGithub} 
+						className={styles.icon} 
+						id={styles.github}
+						size='lg' />
+				</a>
+				<a href="mailto:me@kndwin.dev" target="_blank">
+					<FontAwesomeIcon icon={faEnvelope} 
+						className={styles.icon} 
+						id={styles.github}
+						size='lg' />
+				</a>
       </footer>
     </div>
   )

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from 'components/Layout/layout'
+import Layout, { siteTitle } from 'components/Layout/Layout'
 import styles from './index.module.scss'
 import utilStyles from 'styles/utils.module.css'
 import Date from 'components/date'
@@ -91,13 +91,16 @@ export default function Home({ allPostsData, profile  }: {
           </div>
         </div>
         <ul className={`${styles.blog} ${utilStyles.list}`}>
+					<div className={`${utilStyles.headingXl}`}>
+						blog
+					</div>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
                 <a className={utilStyles.headingLg}>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small className={styles.date}>
                 <Date dateString={date} />
               </small>
             </li>
@@ -108,8 +111,9 @@ export default function Home({ allPostsData, profile  }: {
 }; 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`https://api.github.com/users/kndwin`) 
-  const profile = await res.json(); 
+  //const res = await fetch(`https://api.github.com/users/kndwin`) 
+  //const profile = await res.json(); 
+	const profile = { hello: "world" }
   const allPostsData = getSortedPostsData()
 
   return {
