@@ -9,17 +9,22 @@
   --foreground1: #{$dark1}; 
   --foreground2: #{$dark2}; 
   --foreground3: #{$dark3}; 
+  --grey: #{$grey};
+
   --aqua: #{$aqua-dark};
   --aqua2: #{$aqua-light};
   --blue: #{$blue-dark};
+  --blue2: #{$blue-light};
   --red: #{$red-dark};
   --red2: #{$red-light}; 
   --green: #{$green-dark};
+  --green2: #{$green-light};
 	--yellow: #{$yellow-dark};
 	--yellow2: #{$yellow-light}; 
 	--orange: #{$orange-dark};
+	--orange2: #{$orange-light};
 	--purple: #{$purple-dark};
-  --grey: #{$grey};
+	--purple2: #{$purple-light};
 }
 
 [data-theme='dark'] {
@@ -31,17 +36,22 @@
   --foreground1: #{$light1}; 
   --foreground2: #{$light2}; 
   --foreground3: #{$light3}; 
+  --grey: #{$grey};
+
   --aqua: #{$aqua-light}; 
   --aqua2: #{$aqua-dark};
   --blue: #{$blue-light}; 
+  --blue2: #{$blue-dark}; 
   --red: #{$red-light}; 
   --red2: #{$red-dark}; 
-  --grey: #{$grey};
   --green: #{$green-light};
+  --green2: #{$green-dark};
 	--yellow: #{$yellow-light}; 
 	--yellow2: #{$yellow-dark}; 
 	--orange: #{$orange-light}; 
+	--orange2: #{$orange-dark}; 
 	--purple: #{$purple-light}; 
+	--purple2: #{$purple-dark}; 
 }
 
 html,
@@ -63,6 +73,7 @@ body {
 
 a {
   text-decoration: none;
+	color: var(--blue); 
 }
 
 a:hover {
