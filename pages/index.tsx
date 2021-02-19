@@ -18,17 +18,13 @@ export default function Home({ allPostsData, profile  }: {
 }) {
   const tags = [
 		{
-			title: "typeorm",
-			url: "https://typeorm.io", 
+			title: "junior",
 		},{
-			title: "redis",
-			url: "https://redis.io",
+			title: "front-end",
 		},{
 			title: "nextjs",
-			url: "https://nextjs.org",
 		},{
-			title: "puppeter",
-			url: "https://pptr.dev",
+			title: "vim",
 		}
 	]
   return (
@@ -37,36 +33,28 @@ export default function Home({ allPostsData, profile  }: {
         <title>{siteTitle}</title>
       </Head>
 			<div className={styles.card}>
-				<div className={styles.cardContent}>
-					<div className={`${utilStyles.headingXl}`}>
-						 kevin nguyen
+				<Image src={profile.avatar_url} 
+					alt="A self protrait of Kevin Nguyen"
+					width={200}
+					height={200}
+					className={styles.profileImage}
+				/>
+				<div className={`${styles.description}`}>
+					<div className={`${utilStyles.headingLg}`}>
+						kevin nguyen
 					</div>
-					<div className={styles.profile}>
-						<div className={styles.image}>
-							<Image src={profile.avatar_url} 
-								alt="A self protrait of Kevin Nguyen"
-								width={300}
-								height={300}
-							/>
-						</div>
-						<div className={`${styles.description}`}>
-							<div className={`${utilStyles.headingLg}`}>
-								nice to meet you! 
-							</div>
-							🔨 indie builder <br />🧑‍💻 solution engineer<br />😅 excessive worrier
-						<div className={styles.tags}>
-							{tags.map(({title, url}) => (
-							<div className={styles.tagDisplay}>
-								<div className={styles.tag}>
-										<a href={url} target="_blank">{title}</a>
-								</div>
-							</div>
-							))}
-						</div>
+					🔨 indie builder <br />🧑‍💻 solution engineer<br />😅 excessive worrier
+					<div className={styles.tags}>
+						{tags.map(({title}) => (
+						<div className={styles.tagDisplay}>
+							<div className={styles.tag}>
+									{title}
 							</div>
 						</div>
+						))}
 					</div>
 				</div>
+			</div>
 			<ul className={`${styles.blog} ${utilStyles.list}`}>
 				<div className={`${utilStyles.headingXl}`}>
 					blog

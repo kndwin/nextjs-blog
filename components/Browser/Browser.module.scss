@@ -45,9 +45,17 @@
 }
 
 .url {
+	display: flex; 
+	align-items: center; 
+	font-size: 12pt; 
 	text-decoration: none;
 	a {
 		color: var(--background); 
+	}
+	.urlWhitespace { 
+		width: 20px;
+		height: 35px; 
+		background: var(--foreground); 
 	}
 }
 
@@ -55,9 +63,13 @@
 	.url {
 			white-space: nowrap; 
 			overflow: hidden;
-			width: 95%; 
+
 		a {
 			text-overflow: ellipsis;
+			white-space: nowrap; 
+			overflow: hidden;
+			width: 95%; 
 		}
+
 	}
 }

@@ -1,24 +1,35 @@
 ---
-title: "[WIP] How to set up dark mode with Nextjs"
+title: "How to set up dark mode with Nextjs, Typescript and Sass"
 date: "2020-02-10"
 ---
 ![Image of a gruvbox based desktop](/posts/gruvbox.png)
 ## Introduction
 I love [gruvbox](https://github.com/morhetz/gruvbox)! You can probably tell by
-colorscheme of this site. I went to great lengths to get dark mode to work and
-I'd like to share how I did it.
+colorscheme of this site. I went to great lengths to get dark mode to work (dat aesthetic grind) 
+and I'd like to share how I did it! 😃
 
-### Step 1 - Download dependecies from npm
+### Prerequisite
+Familar with Typescript, Nextjs and a bit of Sass (just enough for @import statements)
+
+Are you as keen as I am 😀? Let's go!
+
+## Instructions
+### Step 1 - Download dependencies from npm
+We'll be using **`next-themes`** to help us maniplate css variables at the root level.
 ```bash
 npm install next-themes --save
 ```
 
-I tried to find a way to do this without dependecies but it turns out this was
-the easiest way to maniplate css variables at the root level.
 
-### Step 2 - Import dependecies into _app.tsx
+_**PS: ** You want to maniplate it at that level since Nextjs wraps your layout components
+in a **`<div id="__next">`**_
+
+### Step 2 - Import dependencies into _app.tsx
+To import the dependencies into our project, we can add it to our \_app.tsx page (just like below).
 
 ```typescript
+// pages/_app.tsx
+
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 
@@ -31,17 +42,16 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-If you don't have an \_app.tsx in your nextjs, you can make one and add the 
-following code snippet. 
+_**PS: ** If you don't have an \_app.tsx in your nextjs, you can make one and add the 
+following code snippet._
 
 ### Step 3 - Add your colors to a global css/scss file
 We're nearly there! now we'll need to update the global css/scss file to
 include these colors
 
-**(PS)** I quite like the  **`transition: all 0.20s linear;`**  animation cause 
-it so smooth.
 ```scss
 // styles/global.scss
+
 :root {
   --background: white;
   --foreground: black; 
@@ -59,13 +69,20 @@ body {
 }
 ```
 
-(Optional): If you like Gruvbox dark theme setting, I attached to the bottom
-an appendix (Appendix A) that has all the color settings!
+_**PS: ** I quite like the  **`transition: all 0.20s linear;`**  animation cause 
+it so smooth._
 
-Now that you have a global css/scss file, we'll need to import it into  
-`_app.tst`
+_**PSS: ** If you like Gruvbox dark theme setting, I attached to the bottom
+an appendix (Appendix A) that has all the color settings!_
+
+Now that you have a global css/scss file, we'll need to import it into our \_app.tsx file!
+
+### Step 4 - Import the css/scss file into \_app.tsx
+After you've played around with the color schemes, you'll need to import it into \_app.tsx.
+
 ```typescript
 // pages/_app.tsx
+
 import "styles/global.scss"
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
@@ -78,12 +95,20 @@ export default function App({ Component, pageProps }: AppProps) {
   ) 
 }
 ```
-We're nearly there! Only one step to go
-### Step 4 - Toggling theme with useTheme()
+
+_**PS: ** We'll need to import all our global css/scss here in the _app.tsx file._
+
+### Step 5 - Toggling theme with useTheme()
+We're nearly done! Since we've enabled the colors and **`next-themes`** module. All that's left is
+to use it inside our application! I normally have a toggle button on the layout component of my site
+but you can feel free to place it anywhere!
+
 ```typescript
+// components/layout.tsx
+
 import { useTheme } from 'next-themes'
 
-export default function Layout() {
+export default function Layout({ children }) {
 
   const {theme, setTheme} = useTheme()
 
@@ -97,14 +122,33 @@ export default function Layout() {
 
 	return (
 		<>
-			<button onClick={toggleTheme} >Theme toggle</button>
+			<header>
+				<button onClick={toggleTheme} >Theme toggle</button>
+			</header>
+			<main>
+				{children}
+			</main>
+			<footer>
+				I'm a footer
+			</footer>
 		</>
 	)
 }
 
 ```
-## Appendix A - Gruvbox settings
-- `styles/global.scss`
+
+## Conclusion
+And that's it! Hopefully these steps help you with enabling dark mode on your sites! 
+If you have any questions, feel free to reach out to me on twitter @kndwindev
+or email me@kndwin.dev
+
+### Related readings
+1. [ next-themes ]( https://github.com/pacocoursey/next-themes )
+2. [ app.jsx/tsx ]( https://nextjs.org/docs/advanced-features/custom-app ) 
+3. [ gruvbox color scheme ]( https://github.com/morhetz/gruvbox )
+
+### Appendix A - Gruvbox settings
+**`styles/global.scss`**
 ```scss
 @import './colors'; 
 
@@ -163,7 +207,7 @@ export default function Layout() {
 }
 ```
 
-- `styles/colors.scss`
+**`styles/colors.scss`**
 ```scss
 $dark0: #282828;
 $dark1: #504945;

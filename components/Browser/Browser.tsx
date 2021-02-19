@@ -11,6 +11,7 @@ export default function Browser ({ url, children }) {
 				</div>
 				<div className={styles.url}>
 					<a href={url}>{url}</a>
+					<div className={styles.urlWhitespace} />
 				</div>
 			</div>
 			<div className={styles.content}>

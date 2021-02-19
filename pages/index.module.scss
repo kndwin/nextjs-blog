@@ -4,15 +4,18 @@
   border: 5px solid var(--foreground); 
   box-shadow: 10px 10px 0 var(--foreground); 
   padding: 2rem; 
-}
-
-.profile {
+	justify-content: space-between; 
 	display: flex;
 }
 
+.profileImage { 
+	border-radius: 50%; 
+}
+
+
 .tags {
   display: block;
-	margin: 10px 0; 
+	margin: 12px 2px; 
 }
 
 .tagDisplay {
@@ -44,6 +47,9 @@
 
 .description {
   margin: 0 1rem; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center; 
 }
 
 .blog {
@@ -72,11 +78,15 @@
 }
 
 @media only screen and (max-width: 650px) {
-	.profile {
+	.card {
 		flex-direction: column; 
+		align-items: center; 
 	}
 
 	.description {
-		margin: 0; 
+		margin: 2em 0; 
+	}
+	.image { 
+		margin-bottom: 2em; 
 	}
 }

@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center; 
   padding: 2rem; 
-	margin: 2rem 0 0 0; 
+	margin: 1rem 0 2rem 0; 
 }
 
 .button {
@@ -31,21 +31,21 @@
 }
 
 .tags {
-	display: flex;
-	flex-direction: row; 
+	display: flex; 
+	align-items: center;
+	width: 50%;
 
 	.tag {
 	color: var(--background);
 	background: var(--foreground); 
 	padding: 2px 6px; 
-	margin: 0 10px 0 0; 
+	margin: 10px 10px 0 0; 
 	border-radius: 5px; 
 	width: fit-content; 
 	height: fit-content; 
 	}
 
 }
-
 
 .title {
 	font-size: 2rem; 
@@ -68,12 +68,12 @@
 	border-bottom-right-radius: 13px; 
 }
 
+.h1 { 
+}
+
 @media only screen and (max-width: 650px) {
 	.tags {
-		flex-direction: column;
-		.tag {
-			margin: 0.5rem 0 0 0; 
-		}
+		flex-wrap: wrap; 
 	}
 
 	.buttons {
