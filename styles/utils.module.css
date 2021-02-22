@@ -19,6 +19,7 @@
   font-weight: 800; 
   line-height: 1.4;
   margin: 0 0 0.5rem 0;
+	width: fit-content; 
 }
 
 .headingMd {

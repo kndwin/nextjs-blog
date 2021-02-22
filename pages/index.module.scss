@@ -3,7 +3,7 @@
   width: 100%;
   border: 5px solid var(--foreground); 
   box-shadow: 10px 10px 0 var(--foreground); 
-  padding: 2rem; 
+  padding: 1.5rem; 
 	justify-content: space-between; 
 	display: flex;
 }
@@ -14,8 +14,10 @@
 
 
 .tags {
-  display: block;
+  display: flex;
+	flex-wrap: wrap; 
 	margin: 12px 2px; 
+	width: 70%; 
 }
 
 .tagDisplay {
@@ -46,10 +48,11 @@
 }
 
 .description {
-  margin: 0 1rem; 
+  margin-left: 3em; 
 	display: flex;
 	flex-direction: column;
 	justify-content: center; 
+	width: fit-content; 
 }
 
 .blog {
@@ -84,7 +87,9 @@
 	}
 
 	.description {
-		margin: 2em 0; 
+		flex-direction: column; 
+		align-items: center; 
+		margin: 2em 0 0 0; 
 	}
 	.image { 
 		margin-bottom: 2em; 

@@ -49,7 +49,7 @@ export default function Projects({
 								</div>
 								<div className={styles.buttons}>
 									<div className={styles.button}>
-										<a href={linkToDemo}>demo</a>
+										<a href={linkToDemo}>site</a>
 									</div>
 									<div className={styles.button}>
 										<a href={linkToSourceCode}>source</a>
@@ -77,9 +77,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const allProjectsData = [
     {
       type: "Client",
-      name: "de-coco",
-      tags: ["nextjs","googlemaps","vercel","emailjs"],
-			screenshot: "https://screenshotapi-dot-net.storage.googleapis.com/de_coco_com_au_11hdxz36yxwy.png", 
+      name: "De-coco",
+      tags: ["nextjs","sass","googlemaps","vercel","emailjs"],
+			screenshot: "/images/decoco.webp", 
       linkToDemo: "https://de-coco.com.au",
       linkToSourceCode: "https://github.com/kndwin/decoco",
       shortDescription: "Custom made designs for kitchen, furniture and vanities"
@@ -88,10 +88,10 @@ export const getStaticProps: GetStaticProps = async () => {
       type: "Personal",
       name: "kndwin",
       tags: ["nextjs","sass","markdown","vercel"],
-			screenshot: "https://screenshotapi-dot-net.storage.googleapis.com/kndwin_dev_5w4rz9gxp0kt.png", 
+			screenshot: "/images/portfolio.webp", 
       linkToDemo: "https://kndwin.dev",
       linkToSourceCode: "https://github.com/kndwin/sites-portfolio",
-      shortDescription: "Portfolio of Kevin Nguyen",
+      shortDescription: "Portfolio made with Nextjs, SCSS and hosted on Vercel",
     },
   ]
 	

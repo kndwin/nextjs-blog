@@ -18,13 +18,13 @@ export default function Home({ allPostsData, profile  }: {
 }) {
   const tags = [
 		{
-			title: "junior",
+			title: "vercel",
 		},{
-			title: "front-end",
+			title: "sass",
 		},{
 			title: "nextjs",
 		},{
-			title: "vim",
+			title: "typescript",
 		}
 	]
   return (
@@ -34,7 +34,7 @@ export default function Home({ allPostsData, profile  }: {
       </Head>
 			<div className={styles.card}>
 				<Image src={profile.avatar_url} 
-					alt="A self protrait of Kevin Nguyen"
+					alt="A self portrait of Kevin Nguyen"
 					width={200}
 					height={200}
 					className={styles.profileImage}
