@@ -1,12 +1,13 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from 'components/Layout/Layout'
-import styles from './index.module.scss'
-import utilStyles from 'styles/utils.module.css'
-import Date from 'components/date'
-import { GetStaticProps } from 'next'
-import { getSortedPostsData } from 'lib/posts'
 import Link from 'next/link'
 import Image from 'next/image'
+import { GetStaticProps } from 'next'
+import { getSortedPostsData } from 'lib/posts'
+
+import Layout, { siteTitle } from 'components/Layout/Layout'
+import Date from 'components/date'
+import styles from './index.module.scss'
+import utilStyles from 'styles/utils.module.css'
 
 export default function Home({ allPostsData, profile  }: {
 	allPostsData: {
@@ -16,6 +17,7 @@ export default function Home({ allPostsData, profile  }: {
 	}[],
   profile: any,
 }) {
+
   const tags = [
 		{
 			title: "vercel",
@@ -27,13 +29,14 @@ export default function Home({ allPostsData, profile  }: {
 			title: "typescript",
 		}
 	]
+
   return (
     <Layout page="home">
       <Head>
         <title>{siteTitle}</title>
       </Head>
 			<div className={styles.card}>
-				<Image src={profile.avatar_url} 
+				<Image src={"/images/profile.webp"} 
 					alt="A self portrait of Kevin Nguyen"
 					width={200}
 					height={200}
@@ -76,6 +79,7 @@ export default function Home({ allPostsData, profile  }: {
 }; 
 
 export const getStaticProps: GetStaticProps = async () => {
+
   const res = await fetch(`https://api.github.com/users/kndwin`) 
   const profile = await res.json(); 
   const allPostsData = getSortedPostsData()
