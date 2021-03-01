@@ -6,7 +6,7 @@ date: "2020-02-10"
 ## Introduction
 I love [gruvbox](https://github.com/morhetz/gruvbox)! You can probably tell by
 colorscheme of this site. I went to great lengths to get dark mode to work (dat aesthetic grind) 
-and I'd like to share how I did it! 😃
+jnd I'd like to share how I did it! 😃
 
 ### Prerequisite
 Familar with Typescript, Nextjs and a bit of Sass (just enough for @import statements)

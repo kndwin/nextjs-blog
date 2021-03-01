@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from './Layout.module.scss'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import { faLinkedin, faTwitter, faYoutube, faGithub} from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faTwitter, faGithub} from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
@@ -73,19 +73,13 @@ export default function Layout({
 						id={styles.twitter}
 						size='lg'/>
 				</a>
-				<a href="https://twitter.com/kndwindev" target="_blank">
-					<FontAwesomeIcon icon={faYoutube} 
-						className={styles.icon} 
-						id={styles.youtube}
-						size='lg' />
-				</a>
 				<a href="https://github.com/kndwin" target="_blank">
 					<FontAwesomeIcon icon={faGithub} 
 						className={styles.icon} 
 						id={styles.github}
 						size='lg' />
 				</a>
-				<a>
+				<a href="https://www.linkedin.com/in/kevin-nguyen-61944419b" target="_blank">
 					<FontAwesomeIcon icon={faLinkedin}
 						className={styles.icon}
 						id={styles.linkedin}
