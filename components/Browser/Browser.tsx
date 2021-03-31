@@ -1,6 +1,13 @@
 import styles from './Browser.module.scss'
+import * as React from 'react'
 
-export default function Browser ({ url, children }) {
+export default function Browser ({ 
+  url, 
+  children 
+}: {
+  url?: string
+  children: React.ReactNode
+}) {
 	return (
 		<div className={styles.browser}>
 			<div className={styles.tabs}>
