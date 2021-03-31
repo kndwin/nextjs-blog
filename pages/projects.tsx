@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
 import Head from 'next/head'
 import Layout, { siteTitle } from 'components/Layout/Layout'
 import utilStyles from 'styles/utils.module.css'
@@ -11,13 +13,26 @@ export default function Projects({
   allProjectsData: {
     type: string
     name: string
-    tags: string[]
+    tags: {
+      src: string
+      iconSrc: string
+    }[]
 		screenshot: string | undefined
     linkToDemo: string
     linkToSourceCode: string
     shortDescription: string
   }[]
 }) {
+
+  const [mounted, setMounted] = useState<boolean>(false)
+  const {theme, setTheme} = useTheme()
+	useEffect(() => {
+		setMounted(true)
+	},[])
+
+  if (!mounted) {
+    return null
+  }
   const projectByType = (_type: string) => {
     return (
       <div>
@@ -32,19 +47,23 @@ export default function Projects({
 							<div className={styles.description}>
 								{`${shortDescription}`}
 							</div>
-
+              <Browser>
+              {/*** 
 							<Browser url={linkToDemo}>
 								<img src={screenshot} 
 									className={styles.screenshot}
 									alt={shortDescription} />
+              ***/}
 							</Browser>
 
 							<div className={styles.bottom}>
 								<div className={styles.tags}>
 								{tags.map(tag => (
-									<div className={styles.tag}>
-										{tag}
-									</div>
+                  <a href={tag.src} target="blank">
+                    <img className={`${theme == 'dark' ? styles.tagLight : ""} 
+                      ${styles.tag}`}
+                      src={tag.iconSrc} />
+                  </a>
 								))}
 								</div>
 								<div className={styles.buttons}>
@@ -62,6 +81,7 @@ export default function Projects({
       </div>
     )
   }
+
   return (
     <Layout page="projects">
       <Head>
@@ -78,7 +98,24 @@ export const getStaticProps: GetStaticProps = async () => {
     {
       type: "Client",
       name: "De-coco",
-      tags: ["nextjs","sass","googlemaps","vercel","emailjs"],
+      tags: [
+        {
+          iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
+          src: "https://nextjs.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/nuxt-dot-js.svg",
+          src: "https://nuxtjs.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/typescript.svg",
+          src: "https://typescriptlang.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
+          src: "https://postgresql.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/node-dot-js.svg",
+          src: "https://nodejs.org"
+        }
+      ],
 			screenshot: "/images/decoco.webp", 
       linkToDemo: "https://de-coco.com.au",
       linkToSourceCode: "https://github.com/kndwin/decoco",
@@ -87,7 +124,24 @@ export const getStaticProps: GetStaticProps = async () => {
     {
       type: "Personal",
       name: "kndwin",
-      tags: ["nextjs","sass","markdown","vercel"],
+      tags: [
+        {
+          iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
+          src: "https://nextjs.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/nuxt-dot-js.svg",
+          src: "https://nuxtjs.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/typescript.svg",
+          src: "https://typescriptlang.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
+          src: "https://postgresql.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/node-dot-js.svg",
+          src: "https://nodejs.org"
+        }
+      ],
 			screenshot: "/images/portfolio.webp", 
       linkToDemo: "https://kndwin.dev",
       linkToSourceCode: "https://github.com/kndwin/sites-portfolio",

@@ -39,13 +39,14 @@
 	flex-wrap: wrap; 
 
 	.tag {
-		color: var(--background);
-		background: var(--foreground); 
-		padding: 0.5rem; 
-		margin: 0.5rem; 
-		box-shadow: 5px 5px 0 var(--grey); 
-		border-radius: 5px; 
+		color: var(--foreground); 
+    height: 40px;
+    margin: 0 1rem 0 0; 
 	}
+
+  .tagLight {
+    filter: invert(88%) sepia(8%) saturate(1080%) hue-rotate(348deg) brightness(110%) contrast(97%);
+  }
 
 }
 
@@ -75,6 +76,10 @@
 @media only screen and (max-width: 650px) {
 	.tags {
 		flex-wrap: wrap; 
+    
+    .tag {
+      margin: 0 1rem 1rem 0; 
+    }
 	}
 
 	.buttons {
