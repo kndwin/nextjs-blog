@@ -84,3 +84,38 @@ img {
   max-width: 100%;
   display: block;
 }
+
+pre, code  {
+	font-family: "Source Code Pro", Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+	padding: .1rem 0.3rem .1rem .3rem;
+	border-radius: 6px;
+	background: var(--foreground) !important;
+	color: var(--background) !important; 
+
+	.token.string {
+		color: var(--aqua2)
+	}
+
+	.token.keyword {
+		color: var(--green2)
+	}
+
+	.token.punctuation {
+		 color: var(--background2);
+	}
+
+	.token.comment {
+		 color: var(--foreground3);
+	}
+
+	.token.selector {
+		color: var(--purple2);
+	}
+
+	.token.operator {
+		color: var(--orange2);
+	}
+	 .token.variable {
+		color: var(--blue2);
+	 }
+}

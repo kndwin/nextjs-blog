@@ -83,9 +83,6 @@ export default function Home({ allPostsData, profile  }: {
         </div>
       </div>
 			<ul className={`${styles.blog} ${utilStyles.list}`}>
-				<div className={`${utilStyles.headingLg}`}>
-					Blog
-				</div>
 				{allPostsData.map(({ id, date, title }) => (
 					<li className={utilStyles.listItem} key={id}>
 						<Link href={`/posts/${id}`}>

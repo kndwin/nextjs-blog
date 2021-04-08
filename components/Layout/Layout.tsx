@@ -52,6 +52,9 @@ export default function Layout({
           <Link href="/projects">
             <a className={page == "projects" ? styles.underline : ""}>projects</a>
           </Link>
+          <Link href="/blog">
+            <a className={page == "blog" ? styles.underline : ""}>blogs</a>
+          </Link>
         </div>
         <div className={styles.rightNav}>
           <label className={styles.switch}>

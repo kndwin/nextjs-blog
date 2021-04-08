@@ -1,5 +1,5 @@
 ---
-title: "How to set up dark mode with Nextjs, Typescript and Sass"
+title: "🌗 How to set up dark mode with Nextjs, Typescript and Sass"
 date: "2020-02-10"
 ---
 ![Image of a gruvbox based desktop](/posts/gruvbox.png)
@@ -15,14 +15,14 @@ Are you as keen as I am 😀? Let's go!
 
 ## Instructions
 ### Step 1 - Download dependencies from npm
-We'll be using **`next-themes`** to help us maniplate css variables at the root level.
+We'll be using `next-themes` to help us maniplate css variables at the root level.
 ```bash
 npm install next-themes --save
 ```
 
 
 _**PS: ** You want to maniplate it at that level since Nextjs wraps your layout components
-in a **`<div id="__next">`**_
+in a `<div id="__next">`
 
 ### Step 2 - Import dependencies into _app.tsx
 To import the dependencies into our project, we can add it to our \_app.tsx page (just like below).
