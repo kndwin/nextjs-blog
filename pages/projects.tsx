@@ -17,7 +17,6 @@ export default function Projects({
       src: string
       iconSrc: string
     }[]
-		screenshot: string | undefined
     linkToDemo: string
     linkToSourceCode: string
     shortDescription: string
@@ -39,22 +38,19 @@ export default function Projects({
         <h1 className={styles.h1}>{_type}</h1>
         {allProjectsData
           .filter(({type}) => _type === type)
-          .map(({name, tags, screenshot, linkToDemo, linkToSourceCode, shortDescription}) => (
-						<div className={styles.card}>
+          .map(({name, tags, linkToDemo, linkToSourceCode, shortDescription}) => (
+						<Browser url={linkToDemo}>
 							<div className={styles.title}>
 								{`${name}`}
 							</div>
 							<div className={styles.description}>
 								{`${shortDescription}`}
 							</div>
-              <Browser>
               {/*** 
-							<Browser url={linkToDemo}>
 								<img src={screenshot} 
 									className={styles.screenshot}
 									alt={shortDescription} />
               ***/}
-							</Browser>
 
 							<div className={styles.bottom}>
 								<div className={styles.tags}>
@@ -68,14 +64,11 @@ export default function Projects({
 								</div>
 								<div className={styles.buttons}>
 									<div className={styles.button}>
-										<a href={linkToDemo}>site</a>
-									</div>
-									<div className={styles.button}>
-										<a href={linkToSourceCode}>source</a>
+										<a href={linkToSourceCode}>source code</a>
 									</div>
 								</div>
 							</div>
-						</div>
+						</Browser>
           )
         )}
       </div>
@@ -116,10 +109,41 @@ export const getStaticProps: GetStaticProps = async () => {
           src: "https://nodejs.org"
         }
       ],
-			screenshot: "/images/decoco.webp", 
       linkToDemo: "https://de-coco.com.au",
       linkToSourceCode: "https://github.com/kndwin/decoco",
-      shortDescription: "Custom made designs for kitchen, furniture and vanities"
+      shortDescription: "Landing page for furniture store"
+    },
+    {
+      type: "Personal",
+      name: "minmd",
+      tags: [
+        {
+          iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
+          src: "https://nextjs.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
+          src: "https://postgresql.org"
+        }
+      ],
+      linkToDemo: "https://minmd.vercel.app",
+      linkToSourceCode: "https://github.com/kndwin/min",
+      shortDescription: "A minimal markdown editor with authtentication and saving capabilities",
+    },
+    {
+      type: "Personal",
+      name: "jobs",
+      tags: [
+        {
+          iconSrc: "https://simpleicons.org/icons/nuxt-dot-js.svg",
+          src: "https://nuxtjs.org"
+        },{
+          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
+          src: "https://postgresql.org"
+        }
+      ],
+      linkToDemo: "https://jobs-phi.vercel.app",
+      linkToSourceCode: "https://github.com/kndwin/jobs",
+      shortDescription: "A jobs dashboard for junior software jobs in Sydney",
     },
     {
       type: "Personal",
@@ -128,24 +152,11 @@ export const getStaticProps: GetStaticProps = async () => {
         {
           iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
           src: "https://nextjs.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/nuxt-dot-js.svg",
-          src: "https://nuxtjs.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/typescript.svg",
-          src: "https://typescriptlang.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
-          src: "https://postgresql.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/node-dot-js.svg",
-          src: "https://nodejs.org"
         }
       ],
-			screenshot: "/images/portfolio.webp", 
       linkToDemo: "https://kndwin.dev",
       linkToSourceCode: "https://github.com/kndwin/sites-portfolio",
-      shortDescription: "Portfolio made with Nextjs, SCSS and hosted on Vercel",
+      shortDescription: "Portfolio",
     },
   ]
 	

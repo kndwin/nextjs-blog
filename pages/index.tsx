@@ -57,7 +57,7 @@ export default function Home({ allPostsData, profile  }: {
       </Head>
       <div className={styles.flexRow}>
         <div className={styles.card}>
-          <img src={"/images/profile.webp"} 
+          <img src={"/images/notionProfile.png"} 
             alt="A self portrait of Kevin Nguyen"
             className={styles.profileImage}
           />
@@ -66,7 +66,7 @@ export default function Home({ allPostsData, profile  }: {
               Kevin
             </div>
             <p>
-              I build full-stack javascript applications.
+              🔨 I build full-stack javascript applications.
             </p>
             <div className={styles.tags}>
               {tags.map(({iconSrc, src}) => (

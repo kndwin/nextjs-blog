@@ -21,7 +21,6 @@
 		border: 2px solid var(--foreground); 
 		box-shadow: 2px 2px 0 var(--foreground); 
 		padding: 0.5rem; 
-		margin: 0.5rem; 
 		a {
 			color: var(--foreground);
 		}
@@ -82,8 +81,9 @@
     }
 	}
 
-	.buttons {
+	.bottom {
 		flex-direction: column;
+		align-items: baseline;
 	}
 	
 }

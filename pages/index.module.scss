@@ -55,6 +55,7 @@
 }
 
 .description {
+	margin-left: 2rem; 
 	display: flex;
   align-items: baseline;
 	flex-direction: column;
@@ -104,6 +105,6 @@
 	}
 
 	.profileImage { 
-    display: none; 
+		flex-direction: column;
 	}
 }
