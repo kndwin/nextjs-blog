@@ -62,9 +62,9 @@ export default function Home({ allPostsData, profile  }: {
             className={styles.profileImage}
           />
           <div className={`${styles.description}`}>
-            <div className={`${utilStyles.headingLg}`}>
+            <h1 className={`${utilStyles.headingLg}`}>
               Kevin
-            </div>
+            </h1>
             <p>
               🔨 I build full-stack javascript applications.
             </p>
