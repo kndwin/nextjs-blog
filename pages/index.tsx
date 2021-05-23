@@ -68,6 +68,9 @@ export default function Home({ allPostsData, profile  }: {
             <p>
               🔨 I build full-stack javascript applications.
             </p>
+						<a href="/resume.pdf" target="_blank" download>
+							📄 Resume
+						</a>
             <div className={styles.tags}>
               {tags.map(({iconSrc, src}) => (
               <div className={styles.tagDisplay}>
