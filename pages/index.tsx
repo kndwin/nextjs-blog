@@ -32,11 +32,8 @@ export default function Home({ allPostsData, profile  }: {
 
   const tags = [
 		{
-			iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
+			iconSrc: "https://simpleicons.org/icons/nextdotjs.svg",
       src: "https://nextjs.org"
-		},{
-			iconSrc: "https://simpleicons.org/icons/nuxt-dot-js.svg",
-      src: "https://nuxtjs.org"
 		},{
 			iconSrc: "https://simpleicons.org/icons/typescript.svg",
       src: "https://typescriptlang.org"
@@ -44,7 +41,10 @@ export default function Home({ allPostsData, profile  }: {
 			iconSrc: "https://simpleicons.org/icons/postgresql.svg",
       src: "https://postgresql.org"
 		},{
-			iconSrc: "https://simpleicons.org/icons/node-dot-js.svg",
+			iconSrc: "https://simpleicons.org/icons/nodedotjs.svg",
+      src: "https://nodejs.org"
+		},{
+			iconSrc: "https://simpleicons.org/icons/amazonaws.svg",
       src: "https://nodejs.org"
     }
 	]
@@ -68,9 +68,6 @@ export default function Home({ allPostsData, profile  }: {
             <p>
               🔨 I build full-stack javascript applications.
             </p>
-						<a href="/resume.pdf" target="_blank" download>
-							📄 Resume
-						</a>
             <div className={styles.tags}>
               {tags.map(({iconSrc, src}) => (
               <div className={styles.tagDisplay}>

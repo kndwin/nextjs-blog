@@ -93,19 +93,10 @@ export const getStaticProps: GetStaticProps = async () => {
       name: "De-coco",
       tags: [
         {
-          iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
+          iconSrc: "https://simpleicons.org/icons/nextdotjs.svg",
           src: "https://nextjs.org"
         },{
-          iconSrc: "https://simpleicons.org/icons/nuxt-dot-js.svg",
-          src: "https://nuxtjs.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/typescript.svg",
-          src: "https://typescriptlang.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
-          src: "https://postgresql.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/node-dot-js.svg",
+          iconSrc: "https://simpleicons.org/icons/sass.svg",
           src: "https://nodejs.org"
         }
       ],
@@ -118,11 +109,8 @@ export const getStaticProps: GetStaticProps = async () => {
       name: "minmd",
       tags: [
         {
-          iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
+          iconSrc: "https://simpleicons.org/icons/nextdotjs.svg",
           src: "https://nextjs.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
-          src: "https://postgresql.org"
         }
       ],
       linkToDemo: "https://minmd.vercel.app",
@@ -131,26 +119,10 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     {
       type: "Personal",
-      name: "jobs",
-      tags: [
-        {
-          iconSrc: "https://simpleicons.org/icons/nuxt-dot-js.svg",
-          src: "https://nuxtjs.org"
-        },{
-          iconSrc: "https://simpleicons.org/icons/postgresql.svg",
-          src: "https://postgresql.org"
-        }
-      ],
-      linkToDemo: "https://jobs-phi.vercel.app",
-      linkToSourceCode: "https://github.com/kndwin/jobs",
-      shortDescription: "A jobs dashboard for junior software jobs in Sydney",
-    },
-    {
-      type: "Personal",
       name: "kndwin",
       tags: [
         {
-          iconSrc: "https://simpleicons.org/icons/next-dot-js.svg",
+          iconSrc: "https://simpleicons.org/icons/nextdotjs.svg",
           src: "https://nextjs.org"
         }
       ],

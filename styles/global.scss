@@ -119,3 +119,21 @@ pre, code  {
 		color: var(--blue2);
 	 }
 }
+
+th, td {
+	text-align: left;
+	padding: 0.5rem; 
+	border: 1px #000 solid;
+}
+
+th {
+	background-color: #eee; 
+	border-radius: 6px;
+}
+
+table {
+	border-collapse: collapse;
+	border-radius: 6px;
+	border-style: hidden; /* hide standard table (collapsed) border */
+	box-shadow: 0 0 0 1px #000; /* this draws the table border  */
+}
