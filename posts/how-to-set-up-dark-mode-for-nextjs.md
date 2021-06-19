@@ -1,5 +1,5 @@
 ---
-title: "🌗 How to set up dark mode with Nextjs, Typescript and Sass"
+title: "🌙 How to set up dark mode with Nextjs, Typescript and Sass"
 date: "2020-02-10"
 ---
 ![Image of a gruvbox based desktop](/posts/gruvbox.png)
@@ -9,24 +9,19 @@ colorscheme of this site. I went to great lengths to get dark mode to work (dat 
 jnd I'd like to share how I did it! 😃
 
 ### Prerequisite
-Familar with Typescript, Nextjs and a bit of Sass (just enough for @import statements)
+Familar with Typescript, Nextjs and a bit of Sass
 
 Are you as keen as I am 😀? Let's go!
 
 ## Instructions
 ### Step 1 - Download dependencies from npm
-We'll be using `next-themes` to help us maniplate css variables at the root level.
+Install `next-themes`.
 ```bash
 npm install next-themes --save
 ```
 
-
-_**PS: ** You want to maniplate it at that level since Nextjs wraps your layout components
-in a `<div id="__next">`
-
 ### Step 2 - Import dependencies into _app.tsx
-To import the dependencies into our project, we can add it to our \_app.tsx page (just like below).
-
+Import the dependencies into our project into `pages/_app.tsx`.
 ```typescript
 // pages/_app.tsx
 
@@ -46,8 +41,7 @@ _**PS: ** If you don't have an \_app.tsx in your nextjs, you can make one and ad
 following code snippet._
 
 ### Step 3 - Add your colors to a global css/scss file
-We're nearly there! now we'll need to update the global css/scss file to
-include these colors
+Update the global css/scss file to include these colors
 
 ```scss
 // styles/global.scss
@@ -69,16 +63,14 @@ body {
 }
 ```
 
-_**PS: ** I quite like the  **`transition: all 0.20s linear;`**  animation cause 
-it so smooth._
-
-_**PSS: ** If you like Gruvbox dark theme setting, I attached to the bottom
-an appendix (Appendix A) that has all the color settings!_
+**PS:** The  `transition: all 0.20s` linear  animation cause it smooth.
+**PSS:** If you like Gruvbox dark theme setting, I attached to the bottom
+an appendix (Appendix A) that has all the color settings!
 
 Now that you have a global css/scss file, we'll need to import it into our \_app.tsx file!
 
 ### Step 4 - Import the css/scss file into \_app.tsx
-After you've played around with the color schemes, you'll need to import it into \_app.tsx.
+After you've played around with the color schemes, you'll need to import it into `\_app.tsx`.
 
 ```typescript
 // pages/_app.tsx
@@ -99,9 +91,7 @@ export default function App({ Component, pageProps }: AppProps) {
 _**PS: ** We'll need to import all our global css/scss here in the _app.tsx file._
 
 ### Step 5 - Toggling theme with useTheme()
-We're nearly done! Since we've enabled the colors and **`next-themes`** module. All that's left is
-to use it inside our application! I normally have a toggle button on the layout component of my site
-but you can feel free to place it anywhere!
+To use it inside our application, we'll need a way to access it from the frnot-end. We can use the `useTheme` webhook to do so. In this implementation, I created a toggle button on the layout component.
 
 ```typescript
 // components/layout.tsx
@@ -139,8 +129,8 @@ export default function Layout({ children }) {
 
 ## Conclusion
 And that's it! Hopefully these steps help you with enabling dark mode on your sites! 
-If you have any questions, feel free to reach out to me on twitter @kndwindev
-or email me@kndwin.dev
+
+If you have any questions, feel free to reach out to me on twitter @kndwindev.
 
 ### Related readings
 1. [ next-themes ]( https://github.com/pacocoursey/next-themes )
