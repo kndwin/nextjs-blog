@@ -5,7 +5,7 @@ date: "2021-06-19"
 # Passing  the AWS developer associate
 ## Context
 - My company (Appian) provides a generous offering of ~$7,000 AUD per year for self-study. The catch though is you have to  pass in order to receive the full subsidy.
-- For a while now, I've been eyeing for this certification, finally comited and booked the exam with 2 months to study for it.
+- For a while now, I've been eyeing for this certification, finally commited and booked the exam with 2 months to study for it.
 - Did the studying outside of work (this involved nights and weekends).
 ## Study plan
 ### Lectures
@@ -18,7 +18,7 @@ document.querySelector('video).playbackRate = 3.0
 ```
 - Did the above method for 3 weeks. With 1 week left, and around 80% done. I took 3 days of work off and watched the rest of it with 2 days to spare.
 ### Practice Papers
-- On the last 2 days, I did 8 practice papers from Stephanie and Neal's practice papers on Udemy (see below). 
+- On the last 2 days, I did around 9 practice papers from a combination of both Stephanie and Neal's practice papers on Udemy (see below). 
 - The practice paper revision process was:
 	1. Speed run the practice paper and see what area I was weak on.
 	2. Do some revision (usually reviewing the lecture slides and these github notes)
