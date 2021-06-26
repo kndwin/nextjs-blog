@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useTheme } from 'next-themes'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 import { GetStaticProps } from 'next'
 import { getSortedPostsData } from 'lib/posts'
 
@@ -10,6 +9,8 @@ import Layout, { siteTitle } from 'components/Layout/Layout'
 import Date from 'components/date'
 import styles from './index.module.scss'
 import utilStyles from 'styles/utils.module.css'
+import { Canvas } from '@react-three/fiber'
+import Model from 'threejs/Kevin'
 
 export default function Home({ allPostsData, profile  }: {
 	allPostsData: {
@@ -57,10 +58,13 @@ export default function Home({ allPostsData, profile  }: {
       </Head>
       <div className={styles.flexRow}>
         <div className={styles.card}>
-          <img src={"/images/notionProfile.png"} 
-            alt="A self portrait of Kevin Nguyen"
-            className={styles.profileImage}
-          />
+
+					<Canvas>
+						<Suspense fallback={null}>
+							<Model />
+						</Suspense>
+					</Canvas>
+
           <div className={`${styles.description}`}>
             <h1 className={`${utilStyles.headingLg}`}>
               Kevin

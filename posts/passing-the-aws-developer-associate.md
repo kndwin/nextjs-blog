@@ -2,7 +2,6 @@
 title: "🎉 Passing the AWS developer associate"
 date: "2021-06-19"
 ---
-# Passing  the AWS developer associate
 ## Context
 - My company (Appian) provides a generous offering of ~$7,000 AUD per year for self-study. The catch though is you have to  pass in order to receive the full subsidy.
 - For a while now, I've been eyeing for this certification, finally commited and booked the exam with 2 months to study for it.
